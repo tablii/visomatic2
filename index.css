@@ -1,0 +1,123 @@
+/* VISOMATIC - Maximalism x Editorial x Aurora x Handwritten Theme */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --aurora-emerald: #10B981;
+  --aurora-cyan: #06B6D4;
+  --aurora-violet: #8B5CF6;
+  --aurora-magenta: #EC4899;
+  --aurora-amber: #F59E0B;
+  --gold-core: #C9A15B;
+  --bg-deep: #08080C;
+  --card-dark: #0E0E14;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #07070A;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #8B5CF6;
+  selection-color: #FFFFFF;
+}
+
+/* Handwritten Font Utility */
+.font-hand {
+  font-family: 'Caveat', cursive;
+}
+
+.font-editorial {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-mono-code {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Aurora Glow Ambient Meshes */
+.bg-aurora-mesh {
+  background: 
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.22) 0px, transparent 55%),
+    radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.20) 0px, transparent 55%),
+    radial-gradient(at 50% 50%, rgba(245, 158, 11, 0.12) 0px, transparent 65%),
+    radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.18) 0px, transparent 55%),
+    radial-gradient(at 0% 100%, rgba(6, 182, 212, 0.20) 0px, transparent 55%);
+}
+
+.aurora-glow-pill {
+  position: relative;
+}
+
+.aurora-glow-pill::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #8B5CF6, #06B6D4, #10B981, #F59E0B);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(8px);
+  transition: opacity 0.4s ease;
+}
+
+.aurora-glow-pill:hover::before {
+  opacity: 1;
+  filter: blur(14px);
+}
+
+/* Editorial Text Gradients */
+.text-aurora-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E9D5FF 25%, #A7F3D0 60%, #FDE68A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-aurora-violet-teal {
+  background: linear-gradient(135deg, #C084FC 0%, #38BDF8 50%, #34D399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8B5CF6, #06B6D4, #F59E0B);
+  border-radius: 4px;
+}
+
+/* Editorial Tape / Sticker Tag */
+.editorial-tape {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+/* Floating animation for subtle aurora drifts */
+@keyframes auroraPulse {
+  0%, 100% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15) translate(15px, -10px);
+    opacity: 0.85;
+  }
+}
+
+.animate-aurora-drift {
+  animation: auroraPulse 10s ease-in-out infinite;
+}
